@@ -7,10 +7,12 @@ const Transactions = () => {
 			<h2 className={styles.title}>Latest Transactions</h2>
 			<table className={styles.table}>
 				<thead>
-					<td>Name</td>
-					<td>Status</td>
-					<td>Date</td>
-					<td>Amount</td>
+					<tr>
+						<td>Name</td>
+						<td>Status</td>
+						<td>Date</td>
+						<td>Amount</td>
+					</tr>
 				</thead>
 				<tbody>
 					<tr>
