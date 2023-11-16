@@ -11,16 +11,13 @@ const Search = ({ placeholder }) => {
 	const pathname = usePathname();
 
 	const handelSearch = useDebouncedCallback((e) => {
-        const params = new URLSearchParams(searchParams);
-        
-        params.set("page")
+		const params = new URLSearchParams(searchParams);
 
 		if (e.target.value) {
 			e.target.value.length > 2 && params.set("q", e.target.value);
 		} else {
 			params.delete("q");
 		}
-
 		replace(`${pathname}?${params}`);
 	}, 300);
 

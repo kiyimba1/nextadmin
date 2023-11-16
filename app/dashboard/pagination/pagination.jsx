@@ -15,11 +15,14 @@ const Pagination = ({ count }) => {
 
 	const hasPrev = ITEMS_PER_PAGE * (parseInt(page) - 1) > 0;
 	const hasNext =
-        ITEMS_PER_PAGE * (parseInt(page) - 1) + ITEMS_PER_PAGE < count;
-    
-    const handleChangePage = (type) => {
-        
-    }
+		ITEMS_PER_PAGE * (parseInt(page) - 1) + ITEMS_PER_PAGE < count;
+
+	const handleChangePage = (type) => {
+		type === "prev"
+			? params.set("page", parseInt(page) - 1)
+			: params.set("page", parseInt(page) + 1);
+		replace(`${pathname}?${params}`);
+	};
 
 	return (
 		<div className={styles.container}>
